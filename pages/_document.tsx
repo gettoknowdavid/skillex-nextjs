@@ -5,7 +5,7 @@ import Document, {
 } from 'next/document';
 import { Server, Sheet } from 'styletron-engine-atomic';
 import { Provider as StyletronProvider } from 'styletron-react';
-import styletron from '../styletron';
+import styletron from '../lib/styletron';
 
 // @ts-ignore
 class MyDocument extends Document <{ stylesheets: Sheet[] }> {
