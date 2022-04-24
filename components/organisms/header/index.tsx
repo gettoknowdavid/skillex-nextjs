@@ -46,7 +46,7 @@ function Header() {
       })}
       >
         <div className={css({ minWidth: '250px' })}>
-          <Image src="/logo.svg" alt="Skillex Logo" width="124px" height="36px" />
+          <Image src="/logo.svg" alt="Skillex Logo" width="124px" height="36px" style={{ cursor: 'pointer' }} />
         </div>
         <div style={{ display: 'block' }}>
           <nav style={{ display: 'block' }}>
@@ -60,10 +60,10 @@ function Header() {
           display: 'flex',
           justifyContent: 'flex-end',
           alignItems: 'center',
-          flex: 1,
-          flexBasis: '0%',
-          flexGrow: 1,
-          flexShrink: 1,
+          // flex: 1,
+          // flexBasis: '0%',
+          // flexGrow: 1,
+          // flexShrink: 1,
           fontSize: '1rem',
         })}
         >
