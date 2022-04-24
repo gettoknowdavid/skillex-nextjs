@@ -21,8 +21,9 @@ class MyDocument extends Document <{ stylesheets: Sheet[] }> {
       },
     });
 
+    const initialProps = await Document.getInitialProps({ ...ctx, ...renderPage });
     const stylesheets = (styletron as Server).getStylesheets() || [];
-    return { ...renderPage, stylesheets };
+    return { ...initialProps, stylesheets };
   };
 
   render() {
