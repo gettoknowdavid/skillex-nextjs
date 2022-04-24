@@ -2,10 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button, SHAPE, SIZE } from 'baseui/button';
+import { useStyletron } from 'baseui';
 
 function Header() {
+  const [css, theme] = useStyletron();
+
   return (
-    <header>
+    <header className={css({
+      [theme.mediaQuery.small]: { padding: '' },
+    })}
+    >
       <div>
         <Image src="/logo.svg" alt="Skillex Logo" width="124px" height="36px" />
       </div>
