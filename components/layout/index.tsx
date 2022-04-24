@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../organisms/header';
 
 type LayoutProps = {
     children: React.ReactNode
@@ -7,7 +8,7 @@ type LayoutProps = {
 function Layout({ children }: LayoutProps) {
   return (
     <>
-      <header>Skillex.</header>
+      <Header />
       <main>
         {children}
       </main>
