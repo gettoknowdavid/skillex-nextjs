@@ -2,6 +2,7 @@ import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { HeadingLarge } from 'baseui/typography';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = function () {
@@ -14,11 +15,11 @@ const Home: NextPage = function () {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <HeadingLarge className={styles.title}>
           Welcome to
           {' '}
           <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </HeadingLarge>
 
         <p className={styles.description}>
           Get started by editing
