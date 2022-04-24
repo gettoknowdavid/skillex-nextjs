@@ -1,4 +1,5 @@
 {
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
     "es2021": true,
@@ -25,7 +26,15 @@
     "baseui/deprecated-component-api": "warn",
     "baseui/no-deep-imports": "warn",
     "react/jsx-props-no-spreading": "off",
+    "import/extensions": "off",
+    "react/display-name": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
-    "func-names": ["error", "as-needed"]
+    "func-names": ["error", "as-needed"],
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
