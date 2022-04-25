@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button, SHAPE, SIZE } from 'baseui/button';
 import { useStyletron } from 'baseui';
 import Hamburger from '../../atoms/hamburger';
 import NavList from '../../molecules/nav-list';
+import NavActionButtons from '../../molecules/nav-action-buttons';
 
 function Header() {
   const [css, theme] = useStyletron();
@@ -64,61 +64,25 @@ function Header() {
           </Link>
         </div>
         <div className={css({
+          justifyItems: 'flex-start',
+          width: '100%',
           [theme.mediaQuery.small]: { display: 'none' },
           [theme.mediaQuery.medium]: { display: 'none' },
-          [theme.mediaQuery.large]: { display: 'block' },
+          [theme.mediaQuery.large]: { display: 'flex' },
         })}
         >
           <NavList />
         </div>
         <div className={css({
-          display: 'flex',
           justifyContent: 'flex-end',
           alignItems: 'center',
-          // flex: 1,
-          // flexBasis: '0%',
-          // flexGrow: 1,
-          // flexShrink: 1,
-          fontSize: '1rem',
+          width: '100%',
           [theme.mediaQuery.small]: { display: 'none' },
           [theme.mediaQuery.medium]: { display: 'none' },
-          [theme.mediaQuery.large]: { display: 'block' },
+          [theme.mediaQuery.large]: { display: 'flex' },
         })}
         >
-          <Link href="/">
-            <a className={css({
-              display: 'inline-block',
-              boxShadow: 'inset 0 0 0 0 #97c680',
-              color: theme.colors.mono800,
-              [theme.mediaQuery.small]: { marginRight: 0, textAlign: 'left' },
-              [theme.mediaQuery.medium]: { marginRight: 0, textAlign: 'left' },
-              [theme.mediaQuery.large]: { marginRight: '2.5rem', textAlign: 'center' },
-            })}
-            >
-              Login
-            </a>
-          </Link>
-          <Button
-            size={SIZE.compact}
-            shape={SHAPE.pill}
-            overrides={{
-              BaseButton: {
-                style: ({
-                  minWidth: '10rem',
-                  paddingTop: '0.8rem',
-                  paddingRight: '1.875rem',
-                  paddingBottom: '0.8rem',
-                  paddingLeft: '1.875rem',
-                  // boxShadow: 'inset 0 45px 0 0 #1e1e2f',
-                  textAlign: 'center',
-                  fontSize: '1rem',
-                  ':hover': { backgroundColor: '#97c680' },
-                }),
-              },
-            }}
-          >
-            Free Trial
-          </Button>
+          <NavActionButtons />
         </div>
         <Hamburger />
       </div>

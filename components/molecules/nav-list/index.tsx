@@ -49,11 +49,10 @@ function NavList() {
 
   return (
 
-    <nav style={{
+    <nav className={css({
       [theme.mediaQuery.small]: {
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
         justifyContent: 'space-between',
         alignItems: 'stretch',
         width: '100%',
@@ -71,10 +70,10 @@ function NavList() {
         display: 'block',
         flexDirection: 'row',
         width: '100%',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         alignItems: 'stretch',
       },
-    }}
+    })}
     >
       <Link href="/"><a className={linkStyles}>Find passion</a></Link>
       <Link href="/"><a className={linkStyles}>Categories</a></Link>
