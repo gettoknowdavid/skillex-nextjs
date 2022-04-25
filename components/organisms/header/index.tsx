@@ -3,25 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button, SHAPE, SIZE } from 'baseui/button';
 import { useStyletron } from 'baseui';
-import { gsap } from 'gsap';
 import Hamburger from '../../atoms/hamburger';
+import NavList from '../../molecules/nav-list';
 
 function Header() {
   const [css, theme] = useStyletron();
-
-  const linkStyles = css({
-    display: 'inline-block',
-    boxShadow: 'inset 0 0 0 0 #97c680',
-    color: theme.colors.mono800,
-    textDecoration: 'none',
-    transitionDuration: '.3s',
-    cursor: 'pointer',
-    fontSize: '1rem',
-    lineHeight: '22px',
-    [theme.mediaQuery.small]: { marginRight: 0, textAlign: 'left' },
-    [theme.mediaQuery.medium]: { marginRight: 0, textAlign: 'left' },
-    [theme.mediaQuery.large]: { marginRight: '2.5rem', textAlign: 'center' },
-  });
 
   return (
     <header className={css({
@@ -83,12 +69,7 @@ function Header() {
           [theme.mediaQuery.large]: { display: 'block' },
         })}
         >
-          <nav style={{ display: 'block' }}>
-            <Link href="/"><a className={linkStyles}>Find passion</a></Link>
-            <Link href="/"><a className={linkStyles}>Categories</a></Link>
-            <Link href="/"><a className={linkStyles}>Skills</a></Link>
-            <Link href="/"><a className={linkStyles}>Customer</a></Link>
-          </nav>
+          <NavList />
         </div>
         <div className={css({
           display: 'flex',
