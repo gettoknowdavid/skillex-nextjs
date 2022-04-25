@@ -1,14 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { StyledNav, StyledNavLink } from './styled-components';
+import LINKS, { NavLinkType } from '../../../lib/links';
 
 function NavList() {
   return (
     <StyledNav>
-      <Link href="/" passHref><StyledNavLink>Find passion</StyledNavLink></Link>
-      <Link href="/" passHref><StyledNavLink>Categories</StyledNavLink></Link>
-      <Link href="/" passHref><StyledNavLink>Skills</StyledNavLink></Link>
-      <Link href="/" passHref><StyledNavLink>Customer</StyledNavLink></Link>
+      {LINKS.map((link: NavLinkType) => (
+        <Link href={link.url} passHref key={link.id}>
+          <StyledNavLink>{link.name}</StyledNavLink>
+        </Link>
+      ))}
     </StyledNav>
   );
 }
