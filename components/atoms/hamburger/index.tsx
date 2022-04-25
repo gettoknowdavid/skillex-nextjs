@@ -8,8 +8,8 @@ function Hamburger() {
   const [menuTl] = React.useState(gsap.timeline({ paused: true }));
 
   React.useEffect(() => {
-    menuTl.to('.line-one', { duration: 0.1, y: 0, rotation: 45 })
-      .to('.line-two', { duration: 0.1, y: 0, rotation: -45 }, 0).reverse();
+    menuTl.to('.line-one', { duration: 0.2, y: 0, rotation: 45 })
+      .to('.line-two', { duration: 0.2, y: 0, rotation: -45 }, 0).reverse();
   }, [menuTl]);
 
   const onclick = () => menuTl.reversed(!menuTl.reversed());
