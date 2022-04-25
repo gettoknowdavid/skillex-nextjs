@@ -15,9 +15,9 @@ body {
   font-family: 'Archia', sans-serif;
 }
 
-@media screen and (min-width: 280px) {
+@media screen and (min-width: 320px) {
   html {
-    font-size: calc(14px + 8 * ((100vw - 280px) / 860));
+    font-size: calc(14px + 8 * ((100vw - 320px) / 860));
   }
 }
 
