@@ -11,10 +11,13 @@ function NavActionButtons() {
       <Link href="/">
         <a className={css({
           display: 'inline-block',
-          boxShadow: 'inset 0 0 0 0 #97c680',
           color: theme.colors.primaryA,
           fontSize: '1rem',
           lineHeight: '22px',
+          boxShadow: 'inset 0 0 0 0 #97c680',
+          transitionProperty: 'box-shadow',
+          transitionDuration: theme.animation.timing700,
+          ':hover': { boxShadow: 'inset 0 -9px 0 0 #97c680' },
           [theme.mediaQuery.small]: {
             marginRight: '16px',
             textAlign: 'center',
@@ -71,11 +74,15 @@ function NavActionButtons() {
               paddingRight: '30px',
               paddingBottom: '11px',
               paddingLeft: '30px',
-              // boxShadow: 'inset 0 45px 0 0 #1e1e2f',
               textAlign: 'center',
               fontSize: '1rem',
               lineHeight: '22px',
-              ':hover': { backgroundColor: '#97c680' },
+              transitionProperty: 'box-shadow',
+              transitionDuration: $theme.animation.timing200,
+              ':hover': {
+                boxShadow: 'inset 0 45px 0 0 #97c680',
+                color: '#1e1e2f',
+              },
               [$theme.mediaQuery.small]: { minWidth: 'auto', width: '100%' },
               [$theme.mediaQuery.medium]: { minWidth: '160px', width: 'auto' },
               [$theme.mediaQuery.large]: { minWidth: '160px', width: 'auto' },
