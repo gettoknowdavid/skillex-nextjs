@@ -4,10 +4,11 @@ import Link from 'next/link';
 import Hamburger from '../../atoms/hamburger';
 import NavList from '../../molecules/nav-list';
 import NavActionButtons from '../../molecules/nav-action-buttons';
+import Logo from '../../atoms/logo';
 import {
   StyledActionsBlock,
   StyledHeader, StyledHeaderBlock, StyledLogoBlock,
-  StyledLogoLink, StyledNavBlock,
+  StyledNavBlock,
 } from './styled-components';
 
 function Header() {
@@ -17,17 +18,7 @@ function Header() {
       <StyledHeaderBlock>
 
         <StyledLogoBlock>
-          <Link href="/" passHref>
-            <StyledLogoLink>
-              <Image
-                src="/logo.svg"
-                alt="Skillex Logo"
-                width="124px"
-                height="36px"
-                style={{ cursor: 'pointer' }}
-              />
-            </StyledLogoLink>
-          </Link>
+          <Logo />
         </StyledLogoBlock>
 
         <StyledNavBlock>
