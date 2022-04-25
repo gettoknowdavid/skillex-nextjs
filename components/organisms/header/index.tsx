@@ -1,7 +1,6 @@
 import React from 'react';
 import Hamburger from '../../atoms/hamburger';
 import NavList from '../../molecules/nav-list';
-import NavActionButtons from '../../molecules/nav-action-buttons';
 import Logo from '../../atoms/logo';
 import {
   StyledActionsBlock,
@@ -10,6 +9,8 @@ import {
   StyledLogoBlock,
   StyledNavBlock,
 } from './styled-components';
+import LoginButton from '../../atoms/login-button';
+import FreeTrialButton from '../../atoms/free-trial-button';
 
 function Header() {
   return (
@@ -22,7 +23,8 @@ function Header() {
           <NavList />
         </StyledNavBlock>
         <StyledActionsBlock>
-          <NavActionButtons />
+          <LoginButton />
+          <FreeTrialButton />
         </StyledActionsBlock>
         <Hamburger />
       </StyledHeaderBlock>

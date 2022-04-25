@@ -3,7 +3,8 @@ import { ANCHOR, Drawer as BaseDrawer, SIZE } from 'baseui/drawer';
 import { useStyletron } from 'baseui';
 import GlobalContext from '../../../contexts/global.context';
 import NavList from '../../molecules/nav-list';
-import NavActionButtons from '../../molecules/nav-action-buttons';
+import LoginButton from '../../atoms/login-button';
+import FreeTrialButton from '../../atoms/free-trial-button';
 
 function Drawer() {
   const { drawerOpen, closeDrawer } = React.useContext(GlobalContext);
@@ -50,7 +51,8 @@ function Drawer() {
         [theme.mediaQuery.large]: { justifyContent: 'flex-start' },
       })}
       >
-        <NavActionButtons />
+        <LoginButton />
+        <FreeTrialButton />
       </div>
     </BaseDrawer>
   );
