@@ -1,5 +1,5 @@
 import React from 'react';
-import { ANCHOR, Drawer as BaseDrawer } from 'baseui/drawer';
+import { ANCHOR, Drawer as BaseDrawer, SIZE } from 'baseui/drawer';
 import GlobalContext from '../../../contexts/global.context';
 
 function Drawer() {
@@ -11,6 +11,7 @@ function Drawer() {
       onClose={closeDrawer}
       autoFocus
       anchor={ANCHOR.top}
+      size={SIZE.full}
       overrides={{
         Root: { style: () => ({ zIndex: 80 }) },
         DrawerBody: { style: () => ({ display: 'flex', justifyContent: 'center' }) },
