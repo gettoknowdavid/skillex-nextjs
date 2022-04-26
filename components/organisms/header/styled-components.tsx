@@ -2,7 +2,7 @@
 import { styled } from 'baseui';
 
 export const StyledHeader = styled('header', ({ $theme }) => ({
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   right: 0,
   left: 0,
@@ -10,7 +10,6 @@ export const StyledHeader = styled('header', ({ $theme }) => ({
   width: '100%',
   display: 'block',
   backgroundColor: $theme.colors.mono100,
-  transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
   [$theme.mediaQuery.small]: { padding: '20px 24px' },
   [$theme.mediaQuery.medium]: { padding: '1.714rem 1.714rem' },
   [$theme.mediaQuery.large]: { padding: '2.375rem 5rem' },

@@ -1,4 +1,6 @@
 import React from 'react';
+import { gsap } from 'gsap/dist/gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Hamburger from '../../atoms/hamburger';
 import NavList from '../../molecules/nav-list';
 import Logo from '../../atoms/logo';
@@ -12,9 +14,38 @@ import {
 import LoginButton from '../../atoms/login-button';
 import FreeTrialButton from '../../atoms/free-trial-button';
 
+gsap.registerPlugin(ScrollTrigger);
+
 function Header() {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#find-position',
+      endTrigger: '#find-position',
+      start: '120px top',
+      onEnterBack: () => tl.reverse(),
+      onRefresh: () => tl.paused(),
+      onLeave: () => tl.reverse(),
+      // scrollTrigger: {
+      //   trigger: '#find-position',
+      //   endTrigger: '#categories',
+      //   start: '120px top',
+      //   end: 99999,
+      //   onUpdate: ({ direction, isActive }) => {
+      //     if (direction === -1) {
+      //       tl.reverse();
+      //     } else if (isActive || direction === 1) {
+      //       tl.play();
+      //     }
+      //   },
+      // },
+    },
+  });
+  React.useEffect(() => {
+    tl.to('.header', { y: '-=200', duration: 0.8, ease: 'power2.in' });
+  });
+
   return (
-    <StyledHeader>
+    <StyledHeader className="header">
       <StyledHeaderBlock>
         <StyledLogoBlock>
           <Logo />
