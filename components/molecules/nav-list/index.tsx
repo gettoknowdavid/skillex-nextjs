@@ -12,7 +12,11 @@ function NavList() {
       {LINKS.map((link: NavLinkType) => (
         <StyledNavLink
           key={link.id}
-          onClick={() => gsap.to(window, { duration: 2, scrollTo: { y: link.url, offsetY: 120 } })}
+          onClick={() => gsap.to(window, {
+            duration: 1.6,
+            ease: 'power3.out',
+            scrollTo: { y: link.url, offsetY: 120 },
+          })}
         >
           {link.name}
         </StyledNavLink>
