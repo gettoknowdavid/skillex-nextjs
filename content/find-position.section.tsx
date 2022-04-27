@@ -1,10 +1,42 @@
 import React from 'react';
 import { useStyletron } from 'baseui';
-import Image from 'next/image';
 import Section from '../components/atoms/section';
 import HeroHeader from '../components/atoms/hero-header';
 import EmailInput from '../components/molecules/email-input';
-import { HeroPerson, HeroPersonContainer, HeroPersonsDiv } from './styled-components';
+import { HeroPersonsDiv } from './styled-components';
+import HeroPersonCard from '../components/molecules/hero-person-card';
+
+export type HeroPersonType = {
+    id: number,
+    title: string,
+    numberOfTopics: number,
+    imageUrl: string,
+    imageAlt: string,
+}
+
+const HERO_PERSONS: HeroPersonType[] = [
+  {
+    id: 1,
+    title: 'Writing Course',
+    imageUrl: '/hero_person-1.jpg',
+    imageAlt: '',
+    numberOfTopics: 100,
+  },
+  {
+    id: 2,
+    title: 'Writing Course',
+    imageUrl: '/hero_person-2.jpg',
+    imageAlt: '',
+    numberOfTopics: 100,
+  },
+  {
+    id: 3,
+    title: 'Business Course',
+    imageUrl: '/hero_person-3.jpg',
+    imageAlt: '',
+    numberOfTopics: 100,
+  },
+];
 
 function FindPositionSection() {
   const [css, theme] = useStyletron();
@@ -39,39 +71,12 @@ function FindPositionSection() {
           </div>
           <div style={{ flex: 1 }}>
             <HeroPersonsDiv>
-              <HeroPerson $width="58%">
-                <HeroPersonContainer>
-                  <Image
-                    src="/hero_person-1.jpg"
-                    alt="Woman smiling folding hands"
-                    layout="fill"
-                    objectFit="cover"
-                    height="115%"
-                  />
-                </HeroPersonContainer>
-              </HeroPerson>
-              <HeroPerson>
-                <HeroPersonContainer>
-                  <Image
-                    src="/hero_person-2.jpg"
-                    alt="Woman smiling folding hands"
-                    layout="fill"
-                    objectFit="cover"
-                    height="115%"
-                  />
-                </HeroPersonContainer>
-              </HeroPerson>
-              <HeroPerson>
-                <HeroPersonContainer>
-                  <Image
-                    src="/hero_person-3.jpg"
-                    alt="Woman smiling folding hands"
-                    layout="fill"
-                    objectFit="cover"
-                    height="115%"
-                  />
-                </HeroPersonContainer>
-              </HeroPerson>
+              {HERO_PERSONS.map((person) => (
+                <HeroPersonCard
+                  key={person.id}
+                  person={person}
+                />
+              ))}
             </HeroPersonsDiv>
           </div>
         </div>
