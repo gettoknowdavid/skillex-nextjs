@@ -20,8 +20,11 @@ function FreeTrialButton() {
             lineHeight: '22px',
             transitionProperty: 'box-shadow',
             transitionDuration: $theme.animation.timing200,
+            backgroundColor: 'rgb(151, 198, 128)',
+            boxShadow: 'rgb(30, 30, 47) 0px 45px 0px 0px inset',
             ':hover': {
-              boxShadow: 'inset 0 45px 0 0 #97c680',
+              backgroundColor: 'rgb(151, 198, 128)',
+              boxShadow: 'rgb(30, 30, 47) 0px 45px 0px -50px inset',
               color: '#1e1e2f',
             },
             [$theme.mediaQuery.small]: { minWidth: 'auto', width: '100%' },
