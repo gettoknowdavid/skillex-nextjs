@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { HeroPerson, HeroPersonContainer } from './styled-components';
-import { HeroPersonType } from '../../../content/find-position.section';
+import { HeroPersonType } from '../../../lib/hero-persons';
 
 function HeroPersonCard(props: {person: HeroPersonType}) {
   const { person } = props;
