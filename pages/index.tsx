@@ -7,6 +7,7 @@ import { Input } from 'baseui/input';
 import Layout from '../components/layout';
 import Section from '../components/atoms/section';
 import EmailInput from '../components/molecules/email-input';
+import HeroHeader from '../components/atoms/hero-header';
 
 const Home: NextPage = function () {
   const [css, theme] = useStyletron();
@@ -33,30 +34,7 @@ const Home: NextPage = function () {
               justifyContent: 'flex-end',
             })}
             >
-              <h1 className={css({
-                marginTop: 0,
-                marginBottom: '90px',
-                fontSize: '76px',
-                lineHeight: 1,
-                fontWeight: 700,
-                opacity: 1,
-                transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-                transformStyle: 'preserve-3d',
-                [theme.mediaQuery.small]: { fontSize: '54px' },
-                [theme.mediaQuery.medium]: { fontSize: '76px' },
-                [theme.mediaQuery.large]: { fontSize: '76px' },
-              })}
-              >
-                Watch
-                <span className="dot">.</span>
-                <br />
-                Learn
-                <span className="dot">.</span>
-                <br />
-                Grow
-                <span className="dot">.</span>
-                <br />
-              </h1>
+              <HeroHeader />
               <form
                 id="email-form"
                 name="email-form"
@@ -64,7 +42,6 @@ const Home: NextPage = function () {
                 method="get"
               >
                 <EmailInput />
-
               </form>
             </div>
           </div>
