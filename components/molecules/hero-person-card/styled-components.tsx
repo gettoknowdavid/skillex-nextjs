@@ -3,7 +3,7 @@ import { styled } from 'baseui';
 export const HeroPerson = styled('div', (props:{$width?:string}) => ({
   position: 'relative',
   overflow: 'hidden',
-  width: props.$width ?? '21%',
+  width: '21%',
   paddingRight: '20px',
   paddingLeft: '20px',
   borderRadius: '20px',
