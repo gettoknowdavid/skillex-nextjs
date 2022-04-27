@@ -34,7 +34,7 @@ export const StyledRoot: Override<SharedProps> = {
   style: () => ({
     position: 'relative',
     paddingRight: 0,
-    zIndex: 0,
+    zIndex: 1,
     width: '100%',
     borderTopWidth: '0px',
     borderRightWidth: '0px',
