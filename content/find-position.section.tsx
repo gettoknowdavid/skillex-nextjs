@@ -11,9 +11,9 @@ function FindPositionSection() {
   React.useEffect(() => {
     gsap.fromTo('.hero-persons', { opacity: 0, x: -400 }, { opacity: 1, x: 0, duration: 1 });
     gsap.fromTo('.hero-header-form', { opacity: 0, y: 100 }, {
-      opacity: 1, y: 0, duration: 1.1, delay: 0.3,
+      opacity: 1, y: 0, duration: 1.1, delay: 0.5,
     });
-  }, []);
+  });
 
   return (
     <Section id="find-position" paddingTop={['100px', '120px', '120px']}>

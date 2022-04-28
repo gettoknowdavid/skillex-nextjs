@@ -3,6 +3,7 @@ import { useStyletron } from 'baseui';
 
 function HeroHeader() {
   const [css, theme] = useStyletron();
+  const dotStyle = { fontFamily: '"Arial", sans-serif' };
   return (
     <h1 className={css({
       marginTop: 0,
@@ -19,13 +20,15 @@ function HeroHeader() {
     })}
     >
       Watch
-      <span className="dot">.</span>
+      <span style={dotStyle}>
+        .
+      </span>
       <br />
       Learn
-      <span className="dot">.</span>
+      <span style={dotStyle}>.</span>
       <br />
       Grow
-      <span className="dot">.</span>
+      <span style={dotStyle}>.</span>
       <br />
     </h1>
   );
