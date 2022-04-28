@@ -20,7 +20,7 @@ function NavList() {
                 gsap.to(window, {
                   duration: 1.6,
                   ease: 'power3.out',
-                  scrollTo: { y: link.url, offsetY: 120 },
+                  scrollTo: { y: link.url, offsetY: 100 },
                 });
               }}
             >
