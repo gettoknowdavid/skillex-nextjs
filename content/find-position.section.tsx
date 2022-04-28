@@ -10,25 +10,32 @@ import HeroPersonCard from '../components/molecules/hero-person-card';
 function FindPositionSection() {
   React.useEffect(() => {
     gsap.fromTo('.hero-persons', { opacity: 0, x: -400 }, { opacity: 1, x: 0, duration: 1 });
+    gsap.fromTo('.hero-header-form', { opacity: 0, y: 100 }, {
+      opacity: 1, y: 0, duration: 1.1, delay: 0.3,
+    });
   }, []);
 
   return (
     <Section id="find-position" paddingTop={['100px', '120px', '120px']}>
       <div style={{ position: 'relative' }}>
-        <div style={{
-          display: 'flex',
-          WebkitBoxPack: 'justify',
-          justifyContent: 'space-between',
-          WebkitBoxAlign: 'stretch',
-          alignItems: 'stretch',
-        }}
-        >
-          <div style={{
-            paddingBottom: '56px',
+        <div
+          style={{
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
+            WebkitBoxPack: 'justify',
+            justifyContent: 'space-between',
+            WebkitBoxAlign: 'stretch',
+            alignItems: 'stretch',
           }}
+        >
+          <div
+            className="hero-header-form"
+            style={{
+              paddingBottom: '56px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              zIndex: 1,
+            }}
           >
             <HeroHeader />
             <form
