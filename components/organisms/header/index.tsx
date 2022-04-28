@@ -25,22 +25,17 @@ function Header() {
       onEnterBack: () => tl.reverse(),
       onRefresh: () => tl.paused(),
       onLeave: () => tl.reverse(),
-      // scrollTrigger: {
-      //   trigger: '#find-position',
-      //   endTrigger: '#categories',
-      //   start: '120px top',
-      //   end: 99999,
-      //   onUpdate: ({ direction, isActive }) => {
-      //     if (direction === -1) {
-      //       tl.reverse();
-      //     } else if (isActive || direction === 1) {
-      //       tl.play();
-      //     }
-      //   },
-      // },
     },
   });
+
   React.useEffect(() => {
+    gsap.fromTo(
+      '.header',
+      { y: -200, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 1, delay: 0.15,
+      },
+    );
     tl.to('.header', { y: '-=200', duration: 0.8, ease: 'power2.in' });
   });
 
