@@ -1,6 +1,7 @@
-import { styled, Theme } from 'baseui';
+import { styled } from 'baseui';
 
-export const HeroPersonsDiv = styled('div', ({ $theme }) => ({
+// eslint-disable-next-line import/prefer-default-export
+export const HeroPersonsDiv = styled('div', () => ({
   opacity: '1',
   position: 'relative',
   zIndex: 0,

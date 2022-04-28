@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { HeroPerson, HeroPersonContainer } from './styled-components';
 import { HeroPersonType } from '../../../lib/hero-persons';
 
-function HeroPersonCard(props: {index: number, person: HeroPersonType}) {
+function HeroPersonCard(props: { index: number, person: HeroPersonType }) {
   const { index, person } = props;
   const list = [0, 1, 2];
   const timeline = gsap.timeline();
