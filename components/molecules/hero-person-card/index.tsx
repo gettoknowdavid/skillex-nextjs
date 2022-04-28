@@ -7,12 +7,6 @@ import { HeroPersonType } from '../../../lib/hero-persons';
 function HeroPersonCard(props: { index: number, person: HeroPersonType }) {
   const { index, person } = props;
   const list = [0, 1, 2];
-  const timeline = gsap.timeline();
-
-  // React.useEffect(() => {
-  //   timeline.to('.person0', { width: '58%' })
-  //     .to(['.person1', '.person2'], { width: '21%' }, 0);
-  // });
 
   const targets = list.filter((n) => n !== index);
 
