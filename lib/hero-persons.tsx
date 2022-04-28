@@ -8,21 +8,21 @@ export type HeroPersonType = {
 
 export const HERO_PERSONS: HeroPersonType[] = [
   {
-    id: 1,
+    id: 0,
     title: 'Writing Course',
     imageUrl: '/hero_person-1.jpg',
     imageAlt: '',
     numberOfTopics: 100,
   },
   {
-    id: 2,
+    id: 1,
     title: 'Writing Course',
     imageUrl: '/hero_person-2.jpg',
     imageAlt: '',
     numberOfTopics: 100,
   },
   {
-    id: 3,
+    id: 2,
     title: 'Business Course',
     imageUrl: '/hero_person-3.jpg',
     imageAlt: '',

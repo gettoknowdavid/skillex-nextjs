@@ -1,9 +1,8 @@
 import { styled } from 'baseui';
 
-export const HeroPerson = styled('div', (props:{$width?:string}) => ({
+export const HeroPerson = styled('div', () => ({
   position: 'relative',
   overflow: 'hidden',
-  width: '21%',
   paddingRight: '20px',
   paddingLeft: '20px',
   borderRadius: '20px',

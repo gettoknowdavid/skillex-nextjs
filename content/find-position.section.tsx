@@ -40,9 +40,10 @@ function FindPositionSection() {
           </div>
           <div style={{ flex: 1 }}>
             <HeroPersonsDiv>
-              {HERO_PERSONS.map((person) => (
+              {HERO_PERSONS.map((person, index) => (
                 <HeroPersonCard
                   key={person.id}
+                  index={index}
                   person={person}
                 />
               ))}
