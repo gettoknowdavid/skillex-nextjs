@@ -38,7 +38,7 @@ function HeroPersonCard(props: {index: number, person: HeroPersonType}) {
           alt={person.imageAlt}
           layout="fill"
           objectFit="cover"
-          height="115%"
+          priority={index === person.id}
         />
       </HeroPersonContainer>
     </HeroPerson>
