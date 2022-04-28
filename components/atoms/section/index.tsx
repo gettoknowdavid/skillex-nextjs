@@ -24,19 +24,19 @@ function Section(props: SectionType) {
         display: 'block',
         width: '100%',
         [theme.mediaQuery.small]: {
-          paddingTop: paddingTop.length !== 0 ? paddingTop[0] : paddingTop,
+          paddingTop: paddingTop.length !== 0 ? paddingTop[0] : '36px',
           paddingRight: '24px',
           paddingBottom: paddingBottom?.length !== 0 ? paddingBottom[0] : '36px',
           paddingLeft: '24px',
         },
         [theme.mediaQuery.medium]: {
-          paddingTop: paddingTop.length !== 0 ? paddingTop[1] : paddingTop,
+          paddingTop: paddingTop.length !== 0 ? paddingTop[1] : '64px',
           paddingRight: '1.714rem',
           paddingBottom: paddingBottom?.length !== 0 ? paddingBottom[1] : '64px',
           paddingLeft: '1.714rem',
         },
         [theme.mediaQuery.large]: {
-          paddingTop: paddingTop.length !== 0 ? paddingTop[2] : paddingTop,
+          paddingTop: paddingTop.length !== 0 ? paddingTop[2] : '64px',
           paddingRight: '5rem',
           paddingBottom: paddingBottom?.length !== 0 ? paddingBottom[2] : '64px',
           paddingLeft: '5rem',

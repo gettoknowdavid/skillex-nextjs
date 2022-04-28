@@ -9,7 +9,22 @@ const Home: NextPage = function () {
   return (
     <>
       <FindPositionSection />
-      <Section id="categories" style={{ minHeight: '100vh' }}><HeadingXXLarge>Categories</HeadingXXLarge></Section>
+      <Section id="categories">
+        <div>
+          <h2 style={{
+            marginTop: 0,
+            marginBottom: '48px',
+            fontSize: '40px',
+            lineHeight: '1.2em',
+            fontWeight: '700',
+            textAlign: 'center',
+          }}
+          >
+            Unlimited access to 100+ instructors
+            <span style={{ fontFamily: '"Arial", sans-serif', color: '#97c680' }}>.</span>
+          </h2>
+        </div>
+      </Section>
       <Section id="skills" style={{ minHeight: '100vh' }}><HeadingXXLarge>Skills</HeadingXXLarge></Section>
       <Section id="customer" style={{ minHeight: '100vh' }}><HeadingXXLarge>Customer</HeadingXXLarge></Section>
     </>
