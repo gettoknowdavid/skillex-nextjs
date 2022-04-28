@@ -1,14 +1,16 @@
 import React from 'react';
-import { useStyletron } from 'baseui';
+import { gsap } from 'gsap';
+import { HERO_PERSONS } from '../lib/hero-persons';
+import { HeroPersonsDiv } from './styled-components';
 import Section from '../components/atoms/section';
 import HeroHeader from '../components/atoms/hero-header';
 import EmailInput from '../components/molecules/email-input';
-import { HeroPersonsDiv } from './styled-components';
 import HeroPersonCard from '../components/molecules/hero-person-card';
-import { HERO_PERSONS } from '../lib/hero-persons';
 
 function FindPositionSection() {
-  const [css, theme] = useStyletron();
+  React.useEffect(() => {
+    gsap.fromTo('.hero-persons', { opacity: 0, x: -400 }, { opacity: 1, x: 0, duration: 1 });
+  }, []);
 
   return (
     <Section id="find-position" paddingTop={['100px', '120px', '120px']}>
@@ -39,7 +41,7 @@ function FindPositionSection() {
             </form>
           </div>
           <div style={{ flex: 1 }}>
-            <HeroPersonsDiv>
+            <HeroPersonsDiv className="hero-persons">
               {HERO_PERSONS.map((person, index) => (
                 <HeroPersonCard
                   key={person.id}
