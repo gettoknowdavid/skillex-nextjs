@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLinkType } from '../lib/links';
+import NavLinkType from '../lib/na-link-type';
 
 export type GlobalType = {
   drawerOpen: boolean,

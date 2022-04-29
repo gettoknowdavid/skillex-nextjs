@@ -2,7 +2,6 @@ import React from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 import { StyledNav, StyledNavLink } from './styled-components';
-import { NavLinkType } from '../../../lib/links';
 import GlobalContext from '../../../contexts/global.context';
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -15,7 +14,7 @@ function NavList() {
     <GlobalContext.Consumer>
       {({ closeDrawer, links }) => (
         <StyledNav>
-          {links.map((link: NavLinkType) => (
+          {links.map((link) => (
             <StyledNavLink
               key={link.id}
               $isActive={link.url === id}
