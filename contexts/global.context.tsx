@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLinkType } from '../lib/links';
 
-expot type GlobalType = {
+export type GlobalType = {
   drawerOpen: boolean,
   toggleDrawer: () => void,
   closeDrawer: () => void,
