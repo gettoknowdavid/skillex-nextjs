@@ -27,13 +27,13 @@ export const StyledNav = styled('nav', ({ $theme }) => ({
   },
 }));
 
-export const StyledNavLink = styled('a', ({ $theme }) => ({
+export const StyledNavLink = styled('a', ({ $theme, $isActive }:any) => ({
   color: $theme.colors.mono800,
   textDecoration: 'none',
   cursor: 'pointer',
   fontSize: '1rem',
   lineHeight: '22px',
-  boxShadow: 'inset 0 0 0 0 #97c680',
+  boxShadow: $isActive ? 'inset 0 -9px 0 0 #97c680' : 'inset 0 0 0 0 #97c680',
   transitionProperty: 'box-shadow',
   transitionDuration: $theme.animation.timing700,
   ':hover': { boxShadow: 'inset 0 -9px 0 0 #97c680' },

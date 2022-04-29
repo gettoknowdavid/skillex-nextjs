@@ -8,19 +8,23 @@ import GlobalContext from '../../../contexts/global.context';
 gsap.registerPlugin(ScrollToPlugin);
 
 function NavList() {
+  const [id, setId] = React.useState('#find-position');
+  const timeline = gsap.timeline();
+
   return (
     <StyledNav>
       {LINKS.map((link: NavLinkType) => (
         <GlobalContext.Consumer key={link.id}>
           {({ closeDrawer }) => (
             <StyledNavLink
-              key={link.id}
+              $isActive={link.url === id}
               onClick={() => {
                 closeDrawer();
-                gsap.to(window, {
+                setId(link.url);
+                timeline.to(window, {
                   duration: 1.6,
                   ease: 'power3.out',
-                  scrollTo: { y: link.url, offsetY: 100 },
+                  scrollTo: { y: link.url, offsetY: 80 },
                 });
               }}
             >
