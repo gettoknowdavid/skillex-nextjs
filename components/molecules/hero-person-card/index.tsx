@@ -17,7 +17,7 @@ function HeroPersonCard(props: { index: number, person: HeroPersonType }) {
     gsap.to([`.person${targets[0]}`, `.person${targets[1]}`], { width: '21%' });
     gsap.to(`#titleDiv${index}`, { opacity: 1, duration: 0.6 });
     gsap.to([`#titleDiv${targets[0]}`, `#titleDiv${targets[1]}`], { opacity: 0, duration: 0.6 });
-    gsap.to(`#box${index}`, { opacity: 0, duration: 0.6 });
+    gsap.to(`#box${index}`, { x: -100, opacity: 0, duration: 0.5 });
   };
 
   const onMouseLeave = () => {
@@ -25,7 +25,7 @@ function HeroPersonCard(props: { index: number, person: HeroPersonType }) {
     gsap.to(['.person1', '.person2'], { width: '21%' });
     gsap.to('#titleDiv0', { opacity: 1, duration: 0.6 });
     gsap.to(['#titleDiv1', '#titleDiv2'], { opacity: 0, duration: 0.6 });
-    gsap.to(`#box${index}`, { opacity: 1, duration: 0.6 });
+    gsap.to(`#box${index}`, { x: 0, opacity: 1, duration: 0.5 });
   };
 
   return (
