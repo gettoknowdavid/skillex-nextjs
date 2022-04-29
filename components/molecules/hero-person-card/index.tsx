@@ -23,6 +23,7 @@ function HeroPersonCard(props: { index: number, person: HeroPersonType }) {
   const onMouseLeave = () => {
     gsap.to('.person0', { width: '58%' });
     gsap.to(['.person1', '.person2'], { width: '21%' });
+    gsap.to('#titleDiv0', { opacity: 1, duration: 0.6 });
     gsap.to(['#titleDiv1', '#titleDiv2'], { opacity: 0, duration: 0.6 });
     gsap.to(`#box${index}`, { opacity: 1, duration: 0.6 });
   };
