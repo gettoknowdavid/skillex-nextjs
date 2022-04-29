@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../organisms/header';
-import GlobalContext from '../../contexts/global.context';
+import GlobalContext, { GlobalType } from '../../contexts/global.context';
 import Drawer from '../organisms/drawer';
+import LINKS from '../../lib/links';
 
 type LayoutProps = {
     children: React.ReactNode
@@ -14,10 +15,11 @@ function Layout({ children }: LayoutProps) {
     setIsOpen(!isOpen);
   }, [isOpen]);
 
-  const globalValue = React.useMemo(() => ({
+  const globalValue: GlobalType = React.useMemo<GlobalType>(() => ({
     drawerOpen: isOpen,
     toggleDrawer,
     closeDrawer: () => setIsOpen(false),
+    links: LINKS,
   }), [isOpen, toggleDrawer]);
 
   return (
