@@ -22,7 +22,8 @@ function Section(props: SectionType) {
       style={style}
       className={css({
         display: 'block',
-        width: '100%',
+        maxWidth: '1280px',
+        margin: '0px auto',
         [theme.mediaQuery.small]: {
           paddingTop: paddingTop.length !== 0 ? paddingTop[0] : '36px',
           paddingRight: '24px',
@@ -37,9 +38,9 @@ function Section(props: SectionType) {
         },
         [theme.mediaQuery.large]: {
           paddingTop: paddingTop.length !== 0 ? paddingTop[2] : '64px',
-          paddingRight: '5rem',
+          paddingRight: '1.714rem',
           paddingBottom: paddingBottom?.length !== 0 ? paddingBottom[2] : '64px',
-          paddingLeft: '5rem',
+          paddingLeft: '1.714rem',
         },
       })}
     >
