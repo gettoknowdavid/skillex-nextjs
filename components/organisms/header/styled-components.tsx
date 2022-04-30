@@ -7,18 +7,17 @@ export const StyledHeader = styled('header', ({ $theme }) => ({
   right: 0,
   left: 0,
   zIndex: 90,
+  maxWidth: '1280px',
   width: '100%',
+  margin: '0px auto',
   display: 'block',
   backgroundColor: $theme.colors.mono100,
   [$theme.mediaQuery.small]: { padding: '20px 24px' },
   [$theme.mediaQuery.medium]: { padding: '1.714rem 1.714rem' },
-  [$theme.mediaQuery.large]: { padding: '2.375rem 5rem' },
+  [$theme.mediaQuery.large]: { padding: '2.375rem 0px' },
 }));
 
 export const StyledHeaderBlock = styled('div', () => ({
-  maxWidth: '1280px',
-  width: '100%',
-  margin: '0px auto',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',

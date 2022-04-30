@@ -22,8 +22,6 @@ function Section(props: SectionType) {
       style={style}
       className={css({
         display: 'block',
-        // maxWidth: '1280px',
-        // margin: '0px auto',
         [theme.mediaQuery.small]: {
           paddingTop: paddingTop.length !== 0 ? paddingTop[0] : '36px',
           paddingRight: '24px',
