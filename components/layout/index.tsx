@@ -30,7 +30,7 @@ function Layout({ children }: LayoutProps) {
     <GlobalContext.Provider value={globalValue}>
       <Header />
       <Drawer />
-      <main>
+      <main style={{ maxWidth: '1280px', margin: '0px auto' }}>
         {children}
       </main>
     </GlobalContext.Provider>
