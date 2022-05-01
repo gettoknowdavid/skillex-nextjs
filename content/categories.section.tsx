@@ -2,8 +2,10 @@ import React from 'react';
 import { useStyletron } from 'baseui';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import CategoriesList from '../components/molecules/categories-list';
+import { FlexGrid, FlexGridItem } from 'baseui/flex-grid';
 import Section from '../components/atoms/section';
+import { CATEGORIES } from '../lib/category-type';
+import CategoryCard from '../components/molecules/category-card';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,7 +54,20 @@ function CategoriesSection() {
           <span style={{ fontFamily: '"Arial", sans-serif', color: '#97c680' }}>.</span>
         </h2>
       </div>
-      <CategoriesList />
+      <FlexGrid
+        className="category-flex"
+        flexGridColumnCount={[1, 1, 4, 4]}
+        flexGridColumnGap={['0px', '0px', 'scale900', 'scale900']}
+        alignItems="flex-end"
+        maxHeight="720px"
+        padding={['40px 0px', '40px 0px', '48px 0px', '48px 0px']}
+      >
+        {CATEGORIES.map((category, index) => (
+          <FlexGridItem className={`category-flex${index}`} key={category.id}>
+            <CategoryCard category={category} index={index} />
+          </FlexGridItem>
+        ))}
+      </FlexGrid>
     </Section>
   );
 }
