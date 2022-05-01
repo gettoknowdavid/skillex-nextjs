@@ -1,15 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap/dist/gsap';
+import { CategoryType } from '../../../lib/category-type';
 
-function CategoryCard({ category, index }: {
-    category: {
-        id: number,
-        name: string, duration: string,
-        imageUrl: string,
-    },
-    index: number
-}) {
+function CategoryCard({ category, index }: { category: CategoryType, index: number }) {
   const onMouseEnter = (e: any) => {
     gsap.to(e.currentTarget, { color: '#97c680' });
     gsap.to(`.category-flex${index}-arrow`, { y: 0 });
