@@ -9,6 +9,7 @@ import Layout from '../components/layout';
 import Section from '../components/atoms/section';
 import FindPositionSection from '../content/find-position.section';
 import CategoryCard from '../components/molecules/category-card';
+import { CATEGORIES } from '../lib/category-type';
 
 gsap.registerPlugin(ScrollTrigger);
 
