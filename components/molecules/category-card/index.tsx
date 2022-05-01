@@ -2,6 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap/dist/gsap';
 import { CategoryType } from '../../../lib/category-type';
+import {
+  CategoryGoToImageBlock,
+  StyledCategoryBlock,
+  StyledCategoryDuration,
+  StyledCategoryImage,
+  StyledCategoryName,
+} from './styled-components';
 
 function CategoryCard({ category, index }: { category: CategoryType, index: number }) {
   const onMouseEnter = (e: any) => {
@@ -15,35 +22,14 @@ function CategoryCard({ category, index }: { category: CategoryType, index: numb
   };
 
   return (
-    <div
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      style={{ overflow: 'hidden', position: 'relative', cursor: 'pointer' }}
-    >
-      <div
-        className={`category-flex${index}-arrow`}
-        style={{
-          borderRadius: '50%',
-          height: '32px',
-          width: '32px',
-          backgroundColor: 'white',
-          position: 'absolute',
-          zIndex: 2,
-          right: '12px',
-          top: '12px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transform: 'translate3d(0px, -60px, 0px)',
-
-        }}
-      >
+    <StyledCategoryBlock onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <CategoryGoToImageBlock className={`category-flex${index}-arrow`}>
         <Image src="/up-right-arrow.png" alt="Up right arrow" height="16px" width="16px" />
-      </div>
-      <img src={`/${category.imageUrl}`} alt={category.name} style={{ width: '100%', borderRadius: '20px' }} />
-      <h3 style={{ fontWeight: 800, marginTop: '10px', marginBottom: '4px' }}>{category.name}</h3>
-      <p style={{ margin: 0, fontSize: '14px', fontWeight: 500 }}>{category.duration}</p>
-    </div>
+      </CategoryGoToImageBlock>
+      <StyledCategoryImage src={`/${category.imageUrl}`} alt={category.name} />
+      <StyledCategoryName>{category.name}</StyledCategoryName>
+      <StyledCategoryDuration>{category.duration}</StyledCategoryDuration>
+    </StyledCategoryBlock>
   );
 }
 
