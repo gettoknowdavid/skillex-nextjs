@@ -17,18 +17,18 @@ import FreeTrialButton from '../../atoms/free-trial-button';
 gsap.registerPlugin(ScrollTrigger);
 
 function Header() {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#find-position',
-      endTrigger: '#find-position',
-      start: '120px top',
-      onEnterBack: () => tl.reverse(),
-      onRefresh: () => tl.paused(),
-      onLeave: () => tl.reverse(),
-    },
-  });
-
   React.useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#find-position',
+        endTrigger: '#find-position',
+        start: '120px top',
+        onEnterBack: () => tl.reverse(),
+        onRefresh: () => tl.paused(),
+        onLeave: () => tl.reverse(),
+      },
+    });
+
     gsap.fromTo(
       '.header',
       { y: -200, opacity: 0 },
