@@ -60,26 +60,20 @@ const Home: NextPage = function () {
             <span style={{ fontFamily: '"Arial", sans-serif', color: '#97c680' }}>.</span>
           </h2>
         </div>
-        <div className={css({
-          [theme.mediaQuery.small]: { padding: '40px 0px' },
-          [theme.mediaQuery.medium]: { padding: '48px 0px' },
-          [theme.mediaQuery.large]: { padding: '48px 0px' },
-        })}
+        <FlexGrid
+          className="category-flex"
+          flexGridColumnCount={[1, 1, 4, 4]}
+          flexGridColumnGap={['0px', '0px', 'scale900', 'scale900']}
+          alignItems="flex-end"
+          maxHeight="720px"
+          padding={['40px 0px', '40px 0px', '48px 0px', '48px 0px']}
         >
-          <FlexGrid
-            className="category-flex"
-            flexGridColumnCount={[1, 1, 4, 4]}
-            flexGridColumnGap={['0px', '0px', 'scale900', 'scale900']}
-            alignItems="flex-end"
-            maxHeight="720px"
-          >
-            {CATEGORIES.map((category, index) => (
-              <FlexGridItem className={`category-flex${index}`} key={category.id}>
-                <CategoryCard category={category} index={index} />
-              </FlexGridItem>
-            ))}
-          </FlexGrid>
-        </div>
+          {CATEGORIES.map((category, index) => (
+            <FlexGridItem className={`category-flex${index}`} key={category.id}>
+              <CategoryCard category={category} index={index} />
+            </FlexGridItem>
+          ))}
+        </FlexGrid>
       </Section>
       <Section id="skills" style={{ minHeight: '100vh' }}><HeadingXXLarge>Skills</HeadingXXLarge></Section>
       <Section id="customer" style={{ minHeight: '100vh' }}><HeadingXXLarge>Customer</HeadingXXLarge></Section>
