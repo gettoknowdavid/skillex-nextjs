@@ -2,14 +2,12 @@ import React, { ReactElement } from 'react';
 import type { NextPage } from 'next';
 import { HeadingXXLarge } from 'baseui/typography';
 import { useStyletron } from 'baseui';
-import { FlexGrid, FlexGridItem } from 'baseui/flex-grid';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Layout from '../components/layout';
 import Section from '../components/atoms/section';
 import FindPositionSection from '../content/find-position.section';
-import CategoryCard from '../components/molecules/category-card';
-import { CATEGORIES } from '../lib/category-type';
+import CategoriesList from '../components/molecules/categories-list';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,20 +58,7 @@ const Home: NextPage = function () {
             <span style={{ fontFamily: '"Arial", sans-serif', color: '#97c680' }}>.</span>
           </h2>
         </div>
-        <FlexGrid
-          className="category-flex"
-          flexGridColumnCount={[1, 1, 4, 4]}
-          flexGridColumnGap={['0px', '0px', 'scale900', 'scale900']}
-          alignItems="flex-end"
-          maxHeight="720px"
-          padding={['40px 0px', '40px 0px', '48px 0px', '48px 0px']}
-        >
-          {CATEGORIES.map((category, index) => (
-            <FlexGridItem className={`category-flex${index}`} key={category.id}>
-              <CategoryCard category={category} index={index} />
-            </FlexGridItem>
-          ))}
-        </FlexGrid>
+        <CategoriesList />
       </Section>
       <Section id="skills" style={{ minHeight: '100vh' }}><HeadingXXLarge>Skills</HeadingXXLarge></Section>
       <Section id="customer" style={{ minHeight: '100vh' }}><HeadingXXLarge>Customer</HeadingXXLarge></Section>
