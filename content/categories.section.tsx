@@ -28,11 +28,11 @@ function CategoriesSection() {
     tl.fromTo(
       ['.category-flex0', '.category-flex3'],
       { y: 0 },
-      { y: -124, duration: 0.6 },
+      { y: 124, duration: 0.6 },
     ).fromTo(
       '.category-flex1',
       { y: 0 },
-      { y: -78, duration: 0.6 },
+      { y: 78, duration: 0.6 },
       0,
     ).paused();
   });
@@ -58,7 +58,7 @@ function CategoriesSection() {
         className="category-flex"
         flexGridColumnCount={[1, 1, 4, 4]}
         flexGridColumnGap={['0px', '0px', 'scale900', 'scale900']}
-        alignItems="flex-end"
+        alignItems="flex-start"
         maxHeight="720px"
         padding={['40px 0px', '40px 0px', '48px 0px', '48px 0px']}
       >
