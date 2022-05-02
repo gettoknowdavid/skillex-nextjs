@@ -3,6 +3,7 @@ import { useStyletron } from 'baseui';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { FlexGrid, FlexGridItem } from 'baseui/flex-grid';
+import { Tab, Tabs } from 'baseui/tabs-motion';
 import Section from '../components/atoms/section';
 import { CATEGORIES } from '../lib/category-type';
 import CategoryCard from '../components/molecules/category-card';
@@ -37,6 +38,20 @@ function CategoriesSection() {
     ).paused();
   });
 
+  const tabOverrides = {
+    Tab: {
+      style: ({
+        paddingTop: '6px',
+        paddingRight: '2px',
+        paddingBottom: '6px',
+        paddingLeft: '2px',
+        marginRight: '14px',
+        marginLeft: '14px',
+        fontWeight: 700,
+      }),
+    },
+  };
+
   return (
     <Section id="categories">
       <div>
@@ -54,6 +69,20 @@ function CategoriesSection() {
           <span style={{ fontFamily: '"Arial", sans-serif', color: '#97c680' }}>.</span>
         </h2>
       </div>
+      <Tabs overrides={{
+        TabList: { style: ({ justifyContent: 'center' }) },
+        TabBorder: { style: ({ backgroundColor: 'white' }) },
+        TabHighlight: { style: ({ height: '1px' }) },
+
+      }}
+      >
+        <Tab overrides={tabOverrides} title="All categories" />
+        <Tab overrides={tabOverrides} title="Entertainment" />
+        <Tab overrides={tabOverrides} title="Lifestyle" />
+        <Tab overrides={tabOverrides} title="Writing" />
+        <Tab overrides={tabOverrides} title="Business" />
+        <Tab overrides={tabOverrides} title="Food" />
+      </Tabs>
       <FlexGrid
         className="category-flex"
         flexGridColumnCount={[1, 1, 4, 4]}
